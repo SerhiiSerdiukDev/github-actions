@@ -12,9 +12,10 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is \"${{ github.ref_name }}\" and your repository is \"${{ github.repository }}\"."
+      - run: echo "Variable before it is setted up':' ACTION_ENV=${{ env.ACTION_ENV }}."
       - name: Set environment variable
         run: echo "ACTION_ENV=production" >> $GITHUB_ENV
-      - run: echo "Variable ACTION_ENV=$GITHUB_ENV.ACTION_ENV."
+      - run: echo "Variable ACTION_ENV=${{ env.ACTION_ENV }}."
       - name: Check out repository code
         uses: actions/checkout@v4
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
