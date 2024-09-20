@@ -17,7 +17,7 @@ jobs:
         run: echo "ACTION_ENV=production" >> $GITHUB_ENV
       - run: echo "Variable ACTION_ENV1 = $ACTION_ENV1"
         env:
-          ACTION_ENV: ${{ env.ACTION_ENV1 }}
+          ACTION_ENV1: ${{ env.ACTION_ENV }}
       - name: Check out repository code
         uses: actions/checkout@v4
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
